@@ -17,6 +17,7 @@
 	<% if @user == current_user %>
     	<h2>Your pets:</h2>
 
+
     	<% @pets.each do |pet| %>
 		    <%= link_to user_pet_url(@user, pet) do %>
 			  <h2><%= pet.name %></h2>

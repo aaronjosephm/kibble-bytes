@@ -44,6 +44,10 @@ class PetsController < ApplicationController
 	end
 
 	def destroy
+		authorize current_user
+		@pet = policy_scope(Pet).find(params[:id])
+		@pet.destroy
+    	redirect_to current_user
 	end
 
 	private
