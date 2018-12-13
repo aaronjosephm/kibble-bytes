@@ -77,16 +77,24 @@ GEM
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
+    em-proxy (0.1.9)
+      eventmachine
     erubi (1.7.1)
+    eventmachine (1.2.7)
     execjs (2.7.0)
     ffi (1.9.25)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    heroku-forward (0.4.0)
+      em-proxy (>= 0.1.8)
+      ffi
+      i18n (~> 0.6)
+      spoon (~> 0.0.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.1.1)
+    i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -186,6 +194,8 @@ GEM
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    spoon (0.0.6)
+      ffi
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -235,6 +245,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
+  heroku-forward
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)
