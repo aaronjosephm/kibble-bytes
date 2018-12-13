@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>New pet</h1>
+  <%= simple_form_for([@user, @pet]) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :weight %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "submit", class: "btn btn-primary" %>
+  <% end %>
+</div>

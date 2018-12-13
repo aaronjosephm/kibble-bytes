@@ -1,0 +1,26 @@
+// Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,600,700,800,900');
+h1 {
+	font-family: "Ubuntu" !important;
+	font-weight: bold;
+	color: black;
+	font-size: 80px !important;
+	letter-spacing: 10px !important;
+}
+
+.logo {
+	width: 100%;
+	height: 300px;
+	background-image: asset-url("logo");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.title {
+	text-align: center;
+}
+
+.title-logo {
+	display: flex;
+	justify-content: center;
+}

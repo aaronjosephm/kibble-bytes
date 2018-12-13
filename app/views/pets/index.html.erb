@@ -1,0 +1,7 @@
+<h1>Here are your pets:</h1>
+
+<% @pets.each do |pet| %>
+    <%= link_to user_pet_url(current_user, pet) do %>
+	  <h2><%= pet.name %></h2>
+	<% end %>
+<% end %>

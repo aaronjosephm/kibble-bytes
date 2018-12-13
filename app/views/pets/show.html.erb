@@ -1,0 +1,20 @@
+<div class="container">
+	<h1><%= @pet.name %></h1>
+	<h1>Weight: <%= @pet.weight %></h1>
+
+	<%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
+    
+    <% if @user == current_user %>
+
+		<%= simple_form_for([@user,@pet]) do |f| %>
+		  <!-- [...] -->
+		  <%= f.input :name %>
+		  <%= f.input :weight %>
+		  <%= f.input :photo %>
+		  <%= f.input :photo_cache, as: :hidden %>
+		  <%= f.submit "update", class: "btn btn-primary" %>
+		  <!-- [...] -->
+		<% end %>
+
+	<% end %>
+</div>

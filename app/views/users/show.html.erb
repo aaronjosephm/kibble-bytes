@@ -1,0 +1,41 @@
+<div class="container">
+	<h1><%= @user.email %></h1>
+
+	<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+    
+    <% if @user == current_user %>
+
+		<%= simple_form_for(@user) do |f| %>
+		  <!-- [...] -->
+		  <%= f.input :photo %>
+		  <%= f.input :photo_cache, as: :hidden %>
+		  <%= f.submit "submit", class: "btn btn-primary" %>
+		  <!-- [...] -->
+		<% end %>
+	<% end %>
+
+	<% if @user == current_user %>
+    	<h2>Your pets:</h2>
+
+    	<% @pets.each do |pet| %>
+		    <%= link_to user_pet_url(@user, pet) do %>
+			  <h2><%= pet.name %></h2>
+			<% end %>
+		<% end %>
+        
+        <%= link_to new_user_pet_url(@user) do %>
+        	<p>Add new pet!</p>
+        <% end %>
+
+    <% else %>
+        <h2><%= @user.email %>'s pets:</h2>
+
+        <% @pets.each do |pet| %>
+		    <%= link_to user_pet_url(@user, pet) do %>
+			  <h2><%= pet.name %></h2>
+			<% end %>
+		<% end %>
+    <% end %>
+
+</div>
+
